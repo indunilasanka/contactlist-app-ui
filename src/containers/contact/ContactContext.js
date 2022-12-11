@@ -102,13 +102,13 @@ const ContactContextProvider = (props) => {
     const filterContacts = (firstNameSearchStr, lastNameSearchStr, organisationSearchStr) => {
         let result = contacts;
         if (firstNameSearchStr) {
-            result = contacts.filter(a => a.firstName.includes(firstNameSearchStr));
+            result = contacts.filter(a => a.firstName.toUpperCase().includes(firstNameSearchStr.toUpperCase()));
         }
         if (lastNameSearchStr) {
-            result = result.filter(a => a.lastName.includes(lastNameSearchStr));
+            result = result.filter(a => a.lastName.toUpperCase().includes(lastNameSearchStr.toUpperCase()));
         }
         if (organisationSearchStr) {
-            result = result.filter(a => a.organisation.includes(organisationSearchStr));
+            result = result.filter(a => a.organisation.toUpperCase().includes(organisationSearchStr.toUpperCase()));
         }
         setFilteredContacts(result);
     };
