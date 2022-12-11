@@ -16,7 +16,7 @@ const ViewEditForm = ({contact}) => {
     useEffect(() => {
         const org = organisations.find(o => o.name === organisation);
         setOrganisationABN(org.abn);
-    }, [setOrganisation])
+    }, [organisation])
 
     const allowEdit = (e) => {
         e.preventDefault();
